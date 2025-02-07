@@ -9,6 +9,10 @@ const AlbumSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  categoria: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     required: true,

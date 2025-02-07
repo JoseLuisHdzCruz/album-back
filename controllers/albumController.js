@@ -40,6 +40,7 @@ exports.createAlbum = async (req, res) => {
       const newAlbum = new Album({
         title,
         description,
+        categoria,
         date,
         imageUrl: result.secure_url,
         publicId: result.public_id,
@@ -82,7 +83,7 @@ exports.getAlbumById = async (req, res) => {
 // Actualizar un álbum
 exports.updateAlbum = async (req, res) => {
   try {
-    const { title, description, date } = req.body;
+    const { title, description, date, categoria } = req.body;
     const album = await Album.findById(req.params.id);
 
     if (!album) {
@@ -91,6 +92,7 @@ exports.updateAlbum = async (req, res) => {
 
     album.title = title || album.title;
     album.description = description || album.description;
+    album.categoria = categoria || album.categoria;
     album.date = date || album.date;
 
     if (req.file) {
