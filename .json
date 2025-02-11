@@ -1,0 +1,17 @@
+{
+    "_id": "ObjectId",
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "secondLastName": "López",
+    "username": "juanperez123",
+    "email": "juan@example.com",
+    "password": "hashed_password_here",
+    "dateOfBirth": "1990-05-15",
+    "role": "user",
+    "profilePicture": "https://example.com/profile.jpg",
+    "comments": [
+      { "albumId": "album_id_1", "comment": "¡Hermosa foto!", "timestamp": "2023-10-01T12:00:00Z" }
+    ],
+    "themePreference": "dark",
+    "notificationsEnabled": true
+  }

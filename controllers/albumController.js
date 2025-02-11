@@ -25,7 +25,7 @@ exports.createAlbum = async (req, res) => {
       console.log('Datos recibidos:', req.body); // Log de los datos recibidos
       console.log('Archivo recibido:', req.file); // Log del archivo recibido
   
-      const { title, description, date } = req.body;
+      const { title, description, date, categoria } = req.body;
       const file = req.file;
   
       if (!file) {
@@ -60,7 +60,7 @@ exports.createAlbum = async (req, res) => {
 // Obtener todos los álbumes
 exports.getAlbums = async (req, res) => {
   try {
-    const albums = await Album.find();
+    const albums = await Album.find().sort({ createdAt: -1 }); // Ordena por 'createdAt' en orden descendente
     res.status(200).json(albums);
   } catch (err) {
     res.status(500).json({ message: err.message });
